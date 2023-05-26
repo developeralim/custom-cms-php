@@ -1,0 +1,53 @@
+foreach ($post->post_types as $key => $value) {
+                        
+                        extract($value);
+
+                        // check for taxonomies as per current post type
+                        $tax = '';
+                        foreach ($taxonomy->taxonomy as $tax_key => $tax_value) {
+                              extract ( $tax_value );
+                              if (  isset ( $object_type ) && $object_type == $key ) {
+                                    $tax .= sprintf ('
+                                          <li>
+                                                <a href="%sadmin/taxonomy.php?taxonomy=%s">
+                                                      <span class="label">%s</span>
+                                                </a>
+                                          </li>',
+                                          $this->site_url,
+                                          $tax_key,
+                                          $args['label'],
+                                    );     
+                              }
+                        }
+                        printf ('
+                              <li class="nav-item">
+                                    <a href="%s">
+                                          <i>%s</i>
+                                          <span class="label">%s</span>
+                                    </a>
+                                    <div class="dropdown">
+                                          <ul class="dropdown-nav">
+                                                <li>
+                                                      <a href="%sadmin/post.php">
+                                                            <span class="label">%s</span>
+                                                      </a>
+                                                </li>
+                                                <li>
+                                                      <a href="%sadmin/post-new.php">
+                                                            <span class="label">%s</span>
+                                                      </a>
+                                                </li>
+                                                %s
+                                          </ul>
+                                    </div>
+                              </li>',
+                              $this->site_url,
+                              $menu_icon,
+                              $label,
+                              $this->site_url,
+                              $all_item,
+                              $this->site_url,
+                              $add_new_item,
+                              $tax,
+                        );
+                  }

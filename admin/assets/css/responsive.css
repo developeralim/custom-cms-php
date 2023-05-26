@@ -1,0 +1,46 @@
+@media screen and (max-width:1400px) {}
+@media screen and (max-width:1200px) {}
+@media screen and (max-width:992px) {
+      .nav-close {
+            display: flex;
+      }
+      .navigation {
+            width: 0;
+            overflow: hidden;
+      }
+      .content{
+            width: 100%;
+            transition: all .3s ease-in-out;
+      }
+}
+@media screen and (max-width:768px) {
+      .left, .right {
+            width: 100%;
+            justify-content: space-between;
+      }
+      .d-none {
+            display: block !important;
+      }
+      .upload-form input {
+            width: 100%;
+      }
+}
+@media screen and (max-width:576px) {
+      .group,input,select,button{
+            width: 100%;
+      }
+      .comment-view ul, .capabilities ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+      }
+      .capabilities {
+            flex-wrap: wrap;
+      }
+      .upload-form button {
+            position: relative;
+            right: 0;
+            top: 10px;
+            transform: translateY(0);
+      }
+}

@@ -1,0 +1,188 @@
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+/* Rotate points and its container css */
+.rotate .rotate-point {
+	height: 18px;
+	width: 17px;
+	display: inline-flex;
+	position: absolute;
+	cursor: pointer;
+	right: -24px;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 1px dashed #acaaaa;
+	justify-content: center;
+	align-items: center;
+}
+.rotate .rotate-point::before {
+	content: "\f2ea";
+	font-family: 'Font awesome 5 free';
+	font-weight: 600;
+	font-size: 12px;
+}
+.move {
+	cursor: move;
+}
+/* resize points */
+.resize::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	border: 1px solid #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.resize .resize-point {
+	height: 8px;
+	width: 8px;
+	display: inline-block;
+	border: 1px solid #6e6c6c;
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	cursor: nw-resize;
+	user-select: none;
+	background: #fff;
+}
+.resize .resize-point.r-top-right {
+	left: auto;
+	right: -4px;
+	cursor: ne-resize;
+}
+.resize .resize-point.r-bottom-left {
+	top: auto;
+	bottom: -4px;
+	cursor: nesw-resize;
+}
+.resize .resize-point.r-bottom-right {
+	top: auto;
+	right: -4px;
+	bottom: -4px;
+	left: auto;
+	cursor: nwse-resize;
+}
+.resize .resize-point.r-top {
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: n-resize;
+	top: -4px;
+}
+.resize .resize-point.r-left {
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: e-resize;
+	left: -4px;
+}
+.resize .resize-point.r-right {
+	right: -4px;
+	top: 50%;
+	left: auto;
+	transform: translateY(-50%);
+	cursor: ew-resize;
+}
+.resize .resize-point.r-bottom {
+	top: auto;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: ns-resize;
+}
+
+/* Image upload css */
+.image_upload {
+	width: 100%;
+	position: relative;
+}
+.image_upload .drag-area {
+	margin: 0;
+	box-shadow: 0 0 7px rgba(0,0,0,.2);
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 300px;
+	padding: 10px;
+	background: #c8dadf;
+	transition: all.2s ease-in-out;
+}
+.drag-area.dragover {
+	background: #fff;
+	padding: 15px;
+}
+.image_upload .drag-area::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	border: 1px dashed;
+	border-radius: 5px;
+}
+.box__icon {
+	width: 100px;
+	height: 100px;
+	fill: #92b0b3;
+	display: block;
+}
+.drag_inner {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.select-input {
+	position: relative;
+	margin-top: 16px;
+	width: 300px;
+}
+.select-input input {
+	opacity: 0;
+	width: 100%;
+}
+
+.select-input button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	font-size: 21px;
+	color: #666;
+	font-weight: 500;
+	cursor: pointer;
+}
+.select-input button:hover strong {
+	color: #39bfd3;
+}
+/* progress */	
+.img-progress-bar {
+	position: absolute;
+	top: 0;
+	width: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #88afb9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: none;
+}
+.progress {
+	width: 50%;
+}
+.hint {
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+}
